@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Eh5-pa-C7v">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="pBi-wr-yYF">
+            <objects>
+                <viewController id="Eh5-pa-C7v" customClass="MainViewController" customModule="GoTheFToSleep" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="26C-49-qLb"/>
+                        <viewControllerLayoutGuide type="bottom" id="nsH-AL-vSL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dAr-Ml-AvE">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="7DM-Ko-UNL" userLabel="image">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6QA-jw-axD">
+                                <rect key="frame" x="684" y="70" width="320" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="dWh-RC-2GK"/>
+                                    <constraint firstAttribute="width" constant="320" id="hw4-AV-aPv"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="479620800.36102802">
+                                    <!--2016-03-14 04:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0g1-Fa-jcW">
+                                <rect key="frame" x="20" y="10" width="215" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="215" id="WbM-3Y-sLx"/>
+                                    <constraint firstAttribute="height" constant="52" id="vx0-6Q-KYq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Wake">
+                                    <color key="titleColor" red="0.32682875360000002" green="0.73935820870000002" blue="0.3414391611" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="wakeButtonTapped:" destination="Eh5-pa-C7v" eventType="touchUpInside" id="efR-E2-V7E"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rSt-VB-mGw" userLabel="WakeDate Picker">
+                                <rect key="frame" x="20" y="70" width="320" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="6i4-As-RmW"/>
+                                    <constraint firstAttribute="height" constant="216" id="cp3-xs-uUM"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="479620800.36102802">
+                                    <!--2016-03-14 04:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRz-vm-ddx">
+                                <rect key="frame" x="789" y="10" width="215" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="215" id="8HY-Fy-CR4"/>
+                                    <constraint firstAttribute="height" constant="52" id="IPh-4Z-MXJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Sleep">
+                                    <color key="titleColor" red="0.32682875360000002" green="0.73935820870000002" blue="0.3414391611" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sleepButtonTapped:" destination="Eh5-pa-C7v" eventType="touchUpInside" id="guF-nS-rAy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6QA-jw-axD" secondAttribute="trailing" constant="20" id="KrH-QP-bWg"/>
+                            <constraint firstItem="mRz-vm-ddx" firstAttribute="top" secondItem="dAr-Ml-AvE" secondAttribute="top" constant="10" id="RRP-Kw-XAj"/>
+                            <constraint firstAttribute="trailing" secondItem="mRz-vm-ddx" secondAttribute="trailing" constant="20" id="TZq-Ow-igf"/>
+                            <constraint firstItem="rSt-VB-mGw" firstAttribute="top" secondItem="0g1-Fa-jcW" secondAttribute="bottom" constant="8" id="h8M-GT-IHz"/>
+                            <constraint firstItem="6QA-jw-axD" firstAttribute="top" secondItem="mRz-vm-ddx" secondAttribute="bottom" constant="8" id="jMa-85-bqZ"/>
+                            <constraint firstItem="0g1-Fa-jcW" firstAttribute="top" secondItem="dAr-Ml-AvE" secondAttribute="top" constant="10" id="lcb-mA-zlL"/>
+                            <constraint firstItem="rSt-VB-mGw" firstAttribute="leading" secondItem="dAr-Ml-AvE" secondAttribute="leading" constant="20" id="oGL-ui-UK3"/>
+                            <constraint firstItem="0g1-Fa-jcW" firstAttribute="leading" secondItem="dAr-Ml-AvE" secondAttribute="leading" constant="20" id="ogP-dO-ZXX"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="7DM-Ko-UNL" id="trv-Oq-Gbh"/>
+                        <outlet property="sleepButton" destination="mRz-vm-ddx" id="ixw-Fu-ctp"/>
+                        <outlet property="sleepDatePicker" destination="6QA-jw-axD" id="O4k-Bi-uPD"/>
+                        <outlet property="wakeButton" destination="0g1-Fa-jcW" id="Eod-DL-5LL"/>
+                        <outlet property="wakeDatePicker" destination="rSt-VB-mGw" id="ar8-g9-4WY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bW3-1z-yMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="308" y="679"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sun" width="1200" height="1053"/>
+    </resources>
+</document>
