@@ -21,6 +21,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        preferences.populateFromDefaults()
         sleepDatePicker.addTarget(self, action: "sleepDatePickerUpdated:", forControlEvents: UIControlEvents.ValueChanged)
         wakeDatePicker.addTarget(self, action: "wakeDatePickerUpdated:", forControlEvents: UIControlEvents.ValueChanged)
         sleepDatePicker.backgroundColor = UIColor.whiteColor()

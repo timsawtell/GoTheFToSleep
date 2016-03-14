@@ -18,6 +18,17 @@ class Preferences {
     var state = stateEnum.unknown
     var sleepHour, sleepMinute, wakeHour, wakeMinute: Int?
     
+    func populateFromDefaults() {
+        if let wakeTimeValue = wakeTime() {
+            wakeHour = wakeTimeValue.hour()
+            wakeMinute = wakeTimeValue.minute()
+        }
+        if let sleepTimeValue = sleepTime() {
+            sleepHour = sleepTimeValue.hour()
+            sleepMinute = sleepTimeValue.minute()
+        }
+    }
+    
     func setWakeTime(date: NSDate) {
         NSUserDefaults.standardUserDefaults().setObject(date, forKey: "wakeTime")
         wakeHour = date.hour()
@@ -50,10 +61,9 @@ class Preferences {
         let newMinute = date.minute()
         let newHour = date.hour()
         
-        if newHour >= sleepHour && newMinute >= sleepMinute {
+        state = .awake
+        if (newHour >= sleepHour && newMinute >= sleepMinute) {
             state = .asleep
-        } else if newHour >= wakeHour && newMinute >= wakeMinute {
-            state = .awake
         }
     }
 }
