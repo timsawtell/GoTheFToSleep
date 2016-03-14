@@ -49,10 +49,6 @@ class Preferences {
     func updateWithNewDate(date: NSDate) {
         let newMinute = date.minute()
         let newHour = date.hour()
-        let sleepHour = sleepTime()?.hour()
-        let sleepMinute = sleepTime()?.minute()
-        let wakeHour = wakeTime()?.hour()
-        let wakeMinute = wakeTime()?.minute()
         
         if newHour >= sleepHour && newMinute >= sleepMinute {
             state = .asleep
