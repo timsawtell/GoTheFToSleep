@@ -28,8 +28,9 @@ class MainViewController: UIViewController {
         wakeDatePicker.backgroundColor = UIColor.whiteColor()
         let tapperoo = UITapGestureRecognizer(target: self, action: "tapped:")
         view.addGestureRecognizer(tapperoo)
-        let timer = NSTimer(timeInterval: 1, target: self, selector: "tick", userInfo: nil, repeats: true)
+        let timer = NSTimer(timeInterval: 60, target: self, selector: "tick", userInfo: nil, repeats: true)
         NSRunLoop.mainRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
+        timer.fire() // don't wait a whole minute before it first runs
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -83,12 +84,14 @@ class MainViewController: UIViewController {
         preferences.setSleepTime(sleepDatePicker.date)
         wakeDatePicker.maximumDate = sleepDatePicker.date
         updateButtons()
+        tick()
     }
     
     func wakeDatePickerUpdated(sender: UIControl) {
         preferences.setWakeTime(wakeDatePicker.date)
         sleepDatePicker.minimumDate = wakeDatePicker.date
         updateButtons()
+        tick()
     }
 
     func updateButtons() {

@@ -62,7 +62,9 @@ class Preferences {
         let newHour = date.hour()
         
         state = .awake
-        if (newHour >= sleepHour && newMinute >= sleepMinute) {
+        if newHour > sleepHour {
+            state = .asleep
+        } else if newHour >= sleepHour && newMinute >= sleepMinute {
             state = .asleep
         }
     }
