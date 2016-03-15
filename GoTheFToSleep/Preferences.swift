@@ -19,13 +19,16 @@ class Preferences {
     var sleepHour, sleepMinute, wakeHour, wakeMinute: Int?
     
     func populateFromDefaults() {
-        if let wakeTimeValue = wakeTime() {
-            wakeHour = wakeTimeValue.hour()
-            wakeMinute = wakeTimeValue.minute()
+        var wakeTimeValue = wakeTime()
+        if wakeTimeValue == nil {
+            wakeTimeValue = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.dateBySettingHour(6, minute: 30, second: 0, ofDate: NSDate(), options: NSCalendarOptions(rawValue:0))!;
+            setWakeTime(wakeTimeValue!)
         }
-        if let sleepTimeValue = sleepTime() {
-            sleepHour = sleepTimeValue.hour()
-            sleepMinute = sleepTimeValue.minute()
+        
+        var sleepTimeValue = sleepTime()
+        if sleepTimeValue == nil {
+            sleepTimeValue = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.dateBySettingHour(19, minute: 30, second: 0, ofDate: NSDate(), options: NSCalendarOptions(rawValue:0))!;
+            setSleepTime(sleepTimeValue!)
         }
     }
     
@@ -65,6 +68,10 @@ class Preferences {
         if newHour > sleepHour {
             state = .asleep
         } else if newHour >= sleepHour && newMinute >= sleepMinute {
+            state = .asleep
+        } else if newHour < wakeHour {
+            state = .asleep
+        } else if newHour <= wakeHour && newMinute <= wakeMinute {
             state = .asleep
         }
     }

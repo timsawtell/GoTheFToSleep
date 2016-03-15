@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
         view.addGestureRecognizer(tapperoo)
         let timer = NSTimer(timeInterval: 60, target: self, selector: "tick", userInfo: nil, repeats: true)
         NSRunLoop.mainRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
-        timer.fire() // don't wait a whole minute before it first runs
+        tick() // don't wait a whole minute before it first runs
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -95,21 +95,13 @@ class MainViewController: UIViewController {
     }
 
     func updateButtons() {
-        var wakeTime = preferences.wakeTime()
-        if wakeTime == nil {
-            wakeTime = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.dateBySettingHour(6, minute: 30, second: 0, ofDate: NSDate(), options: NSCalendarOptions(rawValue:0))!;
-            preferences.setWakeTime(wakeTime!)
-        }
+        let wakeTime = preferences.wakeTime()
         let wakeTitle = NSString(format: "Wake: %@", wakeTime!.toShortTimeString())
         wakeButton.setTitle(wakeTitle as String, forState: .Highlighted)
         wakeButton.setTitle(wakeTitle as String, forState: .Normal)
         wakeDatePicker.date = wakeTime!
         
-        var sleepTime = preferences.sleepTime()
-        if sleepTime == nil {
-            sleepTime = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.dateBySettingHour(19, minute: 0, second: 0, ofDate: NSDate(), options: NSCalendarOptions(rawValue:0))!;
-            preferences.setSleepTime(sleepTime!)
-        }
+        let sleepTime = preferences.sleepTime()
         let sleepTitle = NSString(format: "Sleep: %@", sleepTime!.toShortTimeString())
         sleepButton.setTitle(sleepTitle as String, forState: .Highlighted)
         sleepButton.setTitle(sleepTitle as String, forState: .Normal)
