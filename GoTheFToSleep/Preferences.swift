@@ -23,12 +23,18 @@ class Preferences {
         if wakeTimeValue == nil {
             wakeTimeValue = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.dateBySettingHour(6, minute: 30, second: 0, ofDate: NSDate(), options: NSCalendarOptions(rawValue:0))!;
             setWakeTime(wakeTimeValue!)
+        } else {
+            wakeMinute = wakeTimeValue?.minute()
+            wakeHour = wakeTimeValue?.hour()
         }
         
         var sleepTimeValue = sleepTime()
         if sleepTimeValue == nil {
             sleepTimeValue = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.dateBySettingHour(19, minute: 30, second: 0, ofDate: NSDate(), options: NSCalendarOptions(rawValue:0))!;
             setSleepTime(sleepTimeValue!)
+        } else {
+            sleepMinute = sleepTimeValue?.minute()
+            sleepHour = sleepTimeValue?.hour()
         }
     }
     

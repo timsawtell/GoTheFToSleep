@@ -22,13 +22,13 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         preferences.populateFromDefaults()
-        sleepDatePicker.addTarget(self, action: "sleepDatePickerUpdated:", forControlEvents: UIControlEvents.ValueChanged)
-        wakeDatePicker.addTarget(self, action: "wakeDatePickerUpdated:", forControlEvents: UIControlEvents.ValueChanged)
+        sleepDatePicker.addTarget(self, action: #selector(MainViewController.sleepDatePickerUpdated(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        wakeDatePicker.addTarget(self, action: #selector(MainViewController.wakeDatePickerUpdated(_:)), forControlEvents: UIControlEvents.ValueChanged)
         sleepDatePicker.backgroundColor = UIColor.whiteColor()
         wakeDatePicker.backgroundColor = UIColor.whiteColor()
-        let tapperoo = UITapGestureRecognizer(target: self, action: "tapped:")
+        let tapperoo = UITapGestureRecognizer(target: self, action: #selector(MainViewController.tapped(_:)))
         view.addGestureRecognizer(tapperoo)
-        let timer = NSTimer(timeInterval: 60, target: self, selector: "tick", userInfo: nil, repeats: true)
+        let timer = NSTimer(timeInterval: 60, target: self, selector: #selector(MainViewController.tick), userInfo: nil, repeats: true)
         NSRunLoop.mainRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
         tick() // don't wait a whole minute before it first runs
     }
@@ -51,14 +51,14 @@ class MainViewController: UIViewController {
     func tick() {
         preferences.updateWithNewDate(NSDate())
         switch preferences.state {
-        case .asleep:
-            imageView.image = UIImage(named: "moon")
-            break
-        case .awake:
-            imageView.image = UIImage(named: "sun")
-            break
-        default:
-            break;
+            case .asleep:
+                imageView.image = UIImage(named: "moon")
+                break
+            case .awake:
+                imageView.image = UIImage(named: "sun")
+                break
+            default:
+                break;
         }
         setNeedsStatusBarAppearanceUpdate()
     }

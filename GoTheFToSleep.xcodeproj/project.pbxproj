@@ -14,7 +14,18 @@
 		891911901C96645D00C579C6 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8919118F1C96645D00C579C6 /* Preferences.swift */; };
 		891911921C96668800C579C6 /* NSDate+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891911911C96668800C579C6 /* NSDate+Helper.swift */; };
 		891911941C966A4500C579C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891911931C966A4500C579C6 /* Main.storyboard */; };
+		893CA6E81D595F81005B25F8 /* GoTheFToSleepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893CA6E71D595F81005B25F8 /* GoTheFToSleepTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		893CA6EA1D595F81005B25F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 891911721C96635700C579C6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 891911791C96635700C579C6;
+			remoteInfo = GoTheFToSleep;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8919117A1C96635700C579C6 /* GoTheFToSleep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoTheFToSleep.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,10 +37,20 @@
 		8919118F1C96645D00C579C6 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		891911911C96668800C579C6 /* NSDate+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Helper.swift"; sourceTree = "<group>"; };
 		891911931C966A4500C579C6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		893CA6E51D595F80005B25F8 /* GoTheFToSleepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoTheFToSleepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		893CA6E71D595F81005B25F8 /* GoTheFToSleepTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoTheFToSleepTests.swift; sourceTree = "<group>"; };
+		893CA6E91D595F81005B25F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		891911771C96635700C579C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		893CA6E21D595F80005B25F8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				8919117C1C96635700C579C6 /* GoTheFToSleep */,
+				893CA6E61D595F81005B25F8 /* GoTheFToSleepTests */,
 				8919117B1C96635700C579C6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				8919117A1C96635700C579C6 /* GoTheFToSleep.app */,
+				893CA6E51D595F80005B25F8 /* GoTheFToSleepTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +91,15 @@
 				891911931C966A4500C579C6 /* Main.storyboard */,
 			);
 			path = GoTheFToSleep;
+			sourceTree = "<group>";
+		};
+		893CA6E61D595F81005B25F8 /* GoTheFToSleepTests */ = {
+			isa = PBXGroup;
+			children = (
+				893CA6E71D595F81005B25F8 /* GoTheFToSleepTests.swift */,
+				893CA6E91D595F81005B25F8 /* Info.plist */,
+			);
+			path = GoTheFToSleepTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,19 +122,41 @@
 			productReference = 8919117A1C96635700C579C6 /* GoTheFToSleep.app */;
 			productType = "com.apple.product-type.application";
 		};
+		893CA6E41D595F80005B25F8 /* GoTheFToSleepTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 893CA6EE1D595F81005B25F8 /* Build configuration list for PBXNativeTarget "GoTheFToSleepTests" */;
+			buildPhases = (
+				893CA6E11D595F80005B25F8 /* Sources */,
+				893CA6E21D595F80005B25F8 /* Frameworks */,
+				893CA6E31D595F80005B25F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				893CA6EB1D595F81005B25F8 /* PBXTargetDependency */,
+			);
+			name = GoTheFToSleepTests;
+			productName = GoTheFToSleepTests;
+			productReference = 893CA6E51D595F80005B25F8 /* GoTheFToSleepTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		891911721C96635700C579C6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Tim Sawtell";
 				TargetAttributes = {
 					891911791C96635700C579C6 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = AWZL5B4CHT;
+					};
+					893CA6E41D595F80005B25F8 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 891911791C96635700C579C6;
 					};
 				};
 			};
@@ -120,6 +174,7 @@
 			projectRoot = "";
 			targets = (
 				891911791C96635700C579C6 /* GoTheFToSleep */,
+				893CA6E41D595F80005B25F8 /* GoTheFToSleepTests */,
 			);
 		};
 /* End PBXProject section */
@@ -132,6 +187,13 @@
 				891911941C966A4500C579C6 /* Main.storyboard in Resources */,
 				891911881C96635700C579C6 /* LaunchScreen.storyboard in Resources */,
 				891911851C96635700C579C6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		893CA6E31D595F80005B25F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +211,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		893CA6E11D595F80005B25F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				893CA6E81D595F81005B25F8 /* GoTheFToSleepTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		893CA6EB1D595F81005B25F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 891911791C96635700C579C6 /* GoTheFToSleep */;
+			targetProxy = 893CA6EA1D595F81005B25F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		891911861C96635700C579C6 /* LaunchScreen.storyboard */ = {
@@ -274,6 +352,34 @@
 			};
 			name = Release;
 		};
+		893CA6EC1D595F81005B25F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = GoTheFToSleepTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.sawtellsoftware.GoTheFToSleepTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoTheFToSleep.app/GoTheFToSleep";
+			};
+			name = Debug;
+		};
+		893CA6ED1D595F81005B25F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = GoTheFToSleepTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.sawtellsoftware.GoTheFToSleepTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoTheFToSleep.app/GoTheFToSleep";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -291,6 +397,15 @@
 			buildConfigurations = (
 				8919118D1C96635700C579C6 /* Debug */,
 				8919118E1C96635700C579C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		893CA6EE1D595F81005B25F8 /* Build configuration list for PBXNativeTarget "GoTheFToSleepTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				893CA6EC1D595F81005B25F8 /* Debug */,
+				893CA6ED1D595F81005B25F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
