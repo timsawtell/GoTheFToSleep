@@ -55,7 +55,7 @@ class GoTheFToSleepTests: XCTestCase {
             XCTAssertTrue(preferences.state == .asleep)
         } else {
             XCTFail("Unable to test sleep time")
-        }
+        } 
     }
     
 }
